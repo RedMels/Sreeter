@@ -1,0 +1,6 @@
+<#import "parts/common.ftlx" as c>
+
+<@c.page>
+<div> hello, bro</div>
+<a href="/main">main page</a>
+</@c.page>

@@ -19,7 +19,7 @@ public class RegistrationController {
 
     @GetMapping("/registration")
     public String registration() {
-        return "registration.ftlx";
+        return "registration";
     }
 
     @PostMapping("/registration")
@@ -28,7 +28,7 @@ public class RegistrationController {
 
         if (userFormDB != null) {
             model.put("message", "user already exists");
-            return "registration.ftlx";
+            return "registration";
         }
 
         user.setActive(true);

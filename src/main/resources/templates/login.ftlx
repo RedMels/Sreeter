@@ -1,8 +1,0 @@
-<#import "parts/common.ftlx" as c>
-<#import "parts/login.ftlx" as l>
-
-<@c.page>
-    <h2>login</h2>
-    <@l.login "/login" />
-    <a href="/registration">join</a>
-</@c.page>

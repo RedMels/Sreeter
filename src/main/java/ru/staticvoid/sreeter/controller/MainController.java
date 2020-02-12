@@ -43,16 +43,18 @@ public class MainController {
 
     @PostMapping("/main")
     public String add(
+            @RequestParam(required = false, defaultValue = "") String filter,
             @AuthenticationPrincipal User user,
             @RequestParam String text,
-            @RequestParam String tag, Map<String, Object> model) {
+            @RequestParam String tag, Model model) {
         Message message = new Message(text, tag, user);
 
         msgRepo.save(message);
 
         Iterable<Message> messages = msgRepo.findAll();
 
-        model.put("messages", messages);
+        model.addAttribute("messages", messages);
+        model.addAttribute("filter", filter);
 
         return "main";
     }
